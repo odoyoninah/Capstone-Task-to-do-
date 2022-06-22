@@ -96,7 +96,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'neighbourhood.wsgi.application'
+WSGI_APPLICATION = 'task.wsgi.application'
 
 
 # Database
