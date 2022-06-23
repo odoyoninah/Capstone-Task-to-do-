@@ -14,7 +14,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import *
 
 def index(request):
-    return render(request,'index.html',{'task':task})
+    return render(request,'index.html')
 
 def task(request):
     task = Task.objects.all()
