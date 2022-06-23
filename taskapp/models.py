@@ -8,8 +8,22 @@ class Task(models.Model):
     complete = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
 
-    def_str_(self):
+    def create_task(self):
+        self.save()
+
+    def save_task(self):
+        self.save()
+
+    def delete_task(self):
+        self.delete()
+
+    def update_task(self):
+        self.save()
+
+        
+    def __str__(self):
         return self.title
 
+    
     class Meta:
         ordering = ['complete']

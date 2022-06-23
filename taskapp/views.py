@@ -11,11 +11,23 @@ from django.contrib.auth import authenticate, login, logout
 
 from django.contrib.auth.decorators import login_required
 
-from taskapp.forms import RegisterForm
-#handle all the status code responses.
+from .forms import *
 
 def index(request):
     return render(request,'index.html')
+
+@login_required(login_url='/accounts/login/')
+def createpost(request):
+    if request.method=='POST':
+        form = TaskForm(request.POST,request.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.save()
+
+            return redirect('index')
+    else:
+        form = TaskForm()
+    return render(request,'createtask.html',{'form':form}) 
 
 def signup(request):
     if request.method == 'POST':

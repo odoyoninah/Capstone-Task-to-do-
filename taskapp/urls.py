@@ -11,4 +11,5 @@ urlpatterns = [
     path('login/', views.login, name='login'),
     path('logout/', views.logout, name='logout'),
     path('account/', include('django.contrib.auth.urls')), 
+     path('createtask/', views.createtask, name='createtask')
 ]
