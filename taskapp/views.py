@@ -14,8 +14,13 @@ from django.contrib.auth.decorators import login_required
 from .forms import *
 
 def index(request):
-    task = Task.objects.all()
     return render(request,'index.html',{'task':task})
+
+def task(request):
+    task = Task.objects.all()
+    return render(request,'task.html',{'task':task})
+
+
 
 @login_required(login_url='/accounts/login/')
 def createtask(request):
@@ -25,7 +30,7 @@ def createtask(request):
             post = form.save(commit=False)
             post.save()
 
-            return redirect('index')
+            return redirect('task')
     else:
         form = TaskForm()
     return render(request,'createtask.html',{'form':form}) 
