@@ -19,66 +19,22 @@
   </head>
   <body>
     {% include "navbar.html" %}
-
-    <div class="homep">
-    <marquee behavior="alternate" ><span style="font-weight:1000; color:brown">Task-to-do</span></marquee>
-    <div class="container" align="center">
-        <button><a class="card-link" href="{% url 'createtask' %}"><h4>Create a new task</h4></a></a></button>
-      </div> 
-    </div><br><br>
-    <div class="container">
-        <div class="home">
         
-          <div class="row">
-            <div class="col-md-12">
-              <div class="card">
-                <div class="card-header">
-          <h3>
-              Task-To-Do
-          </h3>
-          <p>
-            Are you stressed with tasks that you have to deliver but you cannot keep track of them
-            because they are overwhelming and a lot to do?Well this is why task-to-do is available
-            to help you in keeping track of the tasks.It enables a user to mark as completed the tasks done
-            and to add new tasks to be done.
-          </p>
-          </div>
-          </div>
-          </div>
-          </div>
-          </div>
-          </div>
-          <br><br>
-    <div class="phts">
-        
-    <img src="https://media.istockphoto.com/photos/can-i-get-a-moment-to-breathe-picture-id654187068?k=20&m=654187068&s=612x612&w=0&h=rZjPhBwCa89dXoq-ro56QMjj79jlfX2DsLTvmqIOc0c=" class="rounded float-start" height="320" width="420">
+    <div class="bg-image"></div>
     
-    <img src="https://media.istockphoto.com/photos/overjoyed-young-african-american-male-student-celebrating-good-exam-picture-id1179756432?k=20&m=1179756432&s=612x612&w=0&h=8WsdsVylkchIojjMV1hfs-QgQQ8lDiWxFB09kjc1RXU=" class="rounded float-end" height="320" width="420">
+    <div class="bg-text">
+        <marquee behavior="alternate" ><span style="font-weight:1000; color:brown">Task-to-do</span></marquee>
+      <h1>Task-to-do</h1>
+      <p>Are you stressed with tasks that you have to deliver but you cannot keep track of them
+        because they are overwhelming and a lot to do?Well this is why task-to-do is available
+        to help you in keeping track of the tasks.It enables a user to mark as completed the tasks done
+        and to add new tasks to be done.</p>
+        <button><a class="card-link" href="{% url 'createtask' %}"><h5>Create a new task</h5></a></a></button>
     </div>
-    
-    
-    <div class="container-fluid m-3">
-  <div class="row" align="center">
-    {% for task in task%}
-    <div class="col-md-4" >
-      
-  
-    <div class="card">
-    <div class="card-header bg-transparent border-success">
-      Task title: <strong>{{ task.title }}</strong>
-    </div>
-    <div class="card-body text-primary">
-      <h5>Task description</h5>: <strong>{{ task.description }}</strong></h5>
-      
-    </div>
-  </div><br>
-  
+     
 
- 
-</div>
-{%endfor%}
-</div> 
-    </div>
+
+    
 
     
 
