@@ -19,4 +19,4 @@ class RegisterForm(UserCreationForm):
 class TaskForm(ModelForm):
     class Meta:
         model = Task
-        fields = ['title', 'description','complete','user','created',]
+        fields = ['title', 'description', 'complete', 'user']

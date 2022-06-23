@@ -14,10 +14,11 @@ from django.contrib.auth.decorators import login_required
 from .forms import *
 
 def index(request):
-    return render(request,'index.html')
+    task = Task.objects.all()
+    return render(request,'index.html',{'task':task})
 
 @login_required(login_url='/accounts/login/')
-def createpost(request):
+def createtask(request):
     if request.method=='POST':
         form = TaskForm(request.POST,request.FILES)
         if form.is_valid():
