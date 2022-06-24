@@ -19,8 +19,14 @@
   </head>
   <body>
     {% include "navbar.html" %}
-        
+    <div class="search">
+        <form action="{% url 'search_task' %}">
+          <input type="text" name="search" placeholder="Search" />
+          <button type="submit">Search</button>
+        </form>
+      </div>
     <div class="bg-image"></div>
+
     
     <div class="bg-text">
         <marquee behavior="alternate" ><span style="font-weight:1000; color:brown">Task-to-do</span></marquee>

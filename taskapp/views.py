@@ -19,10 +19,11 @@ def index(request):
 def task(request):
     task = Task.objects.all()
     return render(request,'task.html',{'task':task})
-
+    
+@login_required(login_url='/accounts/login/')
 def search_task(request):
     if 'task' in request.GET and request.GET['task']:
-        searchTerm = request.GET.get('flask')
+        searchTerm = request.GET.get('task')
         taskResults = Task.get_task(searchTerm)     
         return render(request,'search.html',{'results':taskResults})
 
