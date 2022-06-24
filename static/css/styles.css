@@ -188,3 +188,13 @@ body, html {
     display: flex;
     align-items: center;
 }
+.tsk{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #2196F3;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
