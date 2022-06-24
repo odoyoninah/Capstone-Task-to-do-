@@ -20,3 +20,8 @@ class TaskForm(ModelForm):
     class Meta:
         model = Task
         fields = ['title', 'description', 'complete', 'user']
+
+class UpdatetaskForm(ModelForm):
+    class Meta:
+        model = Task
+        fields = ['title', 'description', 'complete']

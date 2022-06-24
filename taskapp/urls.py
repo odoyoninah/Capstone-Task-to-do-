@@ -13,6 +13,7 @@ urlpatterns = [
     path('account/', include('django.contrib.auth.urls')), 
     path('createtask/', views.createtask, name='createtask'),
     path('task/', views.task, name='task'),
+    path('updatetask/', views.updatetask, name='updatetask'),
     
 ]
 
