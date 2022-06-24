@@ -23,6 +23,11 @@ class Task(models.Model):
         
     def __str__(self):
         return self.title
+    
+    @classmethod
+    def get_task(cls,searchTerm):
+        title = cls.objects.filter(title__icontains=searchTerm)
+        return title
 
     
     

@@ -20,16 +20,7 @@ def task(request):
     task = Task.objects.all()
     return render(request,'task.html',{'task':task})
 
-def updatetask(request,pk):
-    task = Task.objects.get(user=pk)
-    if request.method == 'POST':
-        form = TaskForm(request.POST,instance=task)
-        if form.is_valid():
-            form.save()
-        return redirect('task')
-    else:
-        form = TaskForm(instance=task)
-    return render(request,'updatetask.html',{'form':form})
+
 
 
 @login_required(login_url='/accounts/login/')
