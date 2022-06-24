@@ -17,9 +17,29 @@
     <h1>
         Tasks
     </h1>
-    
-    
-   
+    <div class="container-fluid m-3">
+        <div class="row" align="center">
+          {% for biz in biz%}
+          <div class="col-md-4" >
+            
+        
+          <div class="card">
+          <div class="card-header bg-transparent border-success">
+            Business name: <strong>{{ biz.name }}</strong>
+          </div>
+          <div class="card-body text-primary">
+            <h5>Email: <strong>{{ biz.email }}</strong></h5>
+            <a href="tel:0725615784" class="btn btn-primary">Call Me</a>
+            <a href="mailto:nina.odoyo@students.moringaschool.com?subject=Inquiry on Dev Ninah,&body=Greetrings snr.Dev" class="btn btn-primary">Email Me</a>
+
+          </div>
+        </div><br>
+        
+
+       
+      </div>
+      {%endfor%}
+    </div> 
     <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
