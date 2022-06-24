@@ -20,6 +20,16 @@ def task(request):
     task = Task.objects.all()
     return render(request,'task.html',{'task':task})
 
+def search_task(request):
+    if 'task' in request.GET and request.GET['task']:
+        searchTerm = request.GET.get('flask')
+        taskResults = Task.get_task(searchTerm)     
+        return render(request,'search.html',{'results':taskResults})
+
+    else:
+        message = 'You have not searched for any term'
+        return render(request,'search.html',{'message':message})
+
 
 
 
